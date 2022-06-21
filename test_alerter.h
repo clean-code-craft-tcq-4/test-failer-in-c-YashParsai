@@ -1,0 +1,1 @@
+int networkAlertStub(float celcius);
