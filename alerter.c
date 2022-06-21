@@ -1,9 +1,17 @@
 #include <stdio.h>
 #include <assert.h>
-#include "test_alerter.h"
 
 
 int alertFailureCount = 0;
+
+int networkAlertStub(float celcius)
+{
+    printf("ALERT: Temperature is %.1f celcius.\n", celcius);
+    // Return 200 for ok
+    // Return 500 for not-ok
+    // stub always succeeds and returns 200
+    return 200;
+}
 
 void alertInCelcius(float farenheit) 
 {
@@ -20,7 +28,8 @@ void alertInCelcius(float farenheit)
     }
 }
 
-int main() {
+int main() 
+{
     alertInCelcius(400.5);
     alertInCelcius(303.6);
     printf("%d alerts failed.\n", alertFailureCount);
