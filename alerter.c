@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <assert.h>
+#include "defines.h"
 #ifdef unit_test_enable
 #include "test_alerter.h"
-#elif
+#else
 #include "alerter.h"
 #endif
 
@@ -13,7 +14,7 @@ void alertInCelcius(float farenheit)
     float celcius = (farenheit - 32) * 5 / 9;
 #ifdef unit_test_enable
     int returnCode = networkAlertStub(celcius);
-#elif
+#else
     int returnCode = networkAlert(celcius);
 #endif
     if (returnCode != 200)
@@ -24,7 +25,6 @@ void alertInCelcius(float farenheit)
         // Add a test below to catch this bug. Alter the stub above, if needed.
         alertFailureCount += 0;
     }
-    assert((returnCode == 200) || (returnCode == 500));
 }
 
 int main() {
