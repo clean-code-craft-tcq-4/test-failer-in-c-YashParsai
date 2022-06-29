@@ -45,11 +45,12 @@ void alertInCelcius(float farenheit)
         // However, this code doesn't count failures!
         // Add a test below to catch this bug. Alter the stub above, if needed.
         alertFailureCount += 1;
+        assert((returnCode == not_ok) && (celcius > MAX_THRESHOLD));
     }
-
-    printf("returnCode = %d\t celicus=%f\n",returnCode,celcius);
-    //assert((returnCode == ok) && (celcius <= MAX_THRESHOLD));
-    //assert((returnCode == not_ok) && (celcius > MAX_THRESHOLD));
+    else
+    {
+        assert((returnCode == ok) && (celcius <= MAX_THRESHOLD));
+    }
     
 }
 
