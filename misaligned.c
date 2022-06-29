@@ -17,7 +17,7 @@ void  buildColorMapString(int i, int j, char* string)
     const char* majorColor[] = {"White", "Red", "Black", "Yellow", "Violet"};
     const char* minorColor[] = {"Blue", "Orange", "Green", "Brown", "Slate"};
     
-    sprintf(string,"%d | %s | %s\n", i * 5 + j, majorColor[i], minorColor[i]);
+    sprintf(string,"%d | %s | %s\n", i * 5 + j, majorColor[i], minorColor[j]);
 }
 
 int printColorMap(void)
