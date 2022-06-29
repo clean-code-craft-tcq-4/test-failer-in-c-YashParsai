@@ -61,7 +61,7 @@ int main()
     alertInCelcius(300.8);
     alertInCelcius(401.9);
     
-    printf("%d alerts failed.\n", alertFailureCount);
+    printf("%d alerts Generated\n", alertFailureCount);
     printf("All is well \n");
     return 0;
 }
