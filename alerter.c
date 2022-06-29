@@ -14,12 +14,12 @@ int stub_networkAlert(float celcius)
     // stub always succeeds and returns 200
     if(celcius <= MAX_THRESHOLD)
     {
-        return 200;
+        return ok;
     }
     else
     {
         printf("ALERT: Temperature is %.1f celcius.\n", celcius);
-        return 500;
+        return not_ok;
     }
 }
 
@@ -47,6 +47,7 @@ void alertInCelcius(float farenheit)
         alertFailureCount += 1;
     }
 
+    printf("returnCode = %d\t celicus=%f\n",returnCode,celcius);
     assert((returnCode == ok) && (celcius <= MAX_THRESHOLD));
     assert((returnCode == not_ok) && (celcius > MAX_THRESHOLD));
     
