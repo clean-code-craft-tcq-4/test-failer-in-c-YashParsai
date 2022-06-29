@@ -7,7 +7,7 @@ void printStringToConsole(char* string)
     printf("%s",string);
 }
 
-// This function will build string for color map for providedd index.
+// This function will build string for color map for provided index.
 // param[in]: i = index of majorColor
 // param[in]:j = index of minorColor
 // param[in]: string = to hold the content of the colormap in string format.
@@ -60,6 +60,6 @@ int main()
     int result = printColorMap();
     assert(result == 25);
     test_printColorMap();
-    printf("All is well (maybe!)\n");
+    printf("All is well\n");
     return 0;
 }
